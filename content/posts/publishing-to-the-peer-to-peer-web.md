@@ -33,14 +33,14 @@ I created the DAT version of my website using the <a href='https://github.com/da
 
 #### 4. Synching Changes to DAT
 
-Synching changes to the DAT version is just a matter of copying the freshly built site and running `dat sync` using the dat command tool:
+Synching changes to the DAT version is just a matter of copying the freshly built site and running `dat sync` using the `dat` command line tool:
 
 ```
 cp -r target/deploy/ path/to/dat
 dat sync --dir=path/to/dat
 ```
 
-That's basically it. For simplicity I add all the commands to a `deploy.sh` shell script so I can simply run `bash deploy.sh` to deploy changes to both the http(s) and dat versions of my website in one go.
+That's basically it. For simplicity I add all the commands to a `deploy.sh` shell script so I can simply run `bash deploy.sh` to deploy changes to both the http(s) and DAT versions of my website in one go.
 
 Now you can visit <a href='//ricky.codes'>ricky.codes</a> with a browser that supports the DAT protocol (like <a href='https://beakerbrowser.com/'>Beaker</a>).
 
