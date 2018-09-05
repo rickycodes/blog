@@ -1,0 +1,8 @@
+baseURL = "//ricky.codes/blog/"
+title = "Hello World"
+theme = "one"
+canonifyurls = false
+builddrafts = false
+
+[taxonomies]
+   tag = "tags"
