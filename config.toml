@@ -1,5 +1,5 @@
 baseURL = "//ricky.codes/blog/"
-title = "Hello World"
+title = "Rickipedia"
 theme = "one"
 canonifyurls = false
 builddrafts = false

@@ -1,7 +1,6 @@
 ---
 title: "Publishing my Website to the peer-to-peer Web"
 date: 2018-09-05T13:14:04-04:00
-draft: false
 tags: [dat, peer-to-peer, peer-to-peer-web]
 description: "How to publish and deploy your website with the decentralized dat:// protocol"
 ---
@@ -33,16 +32,18 @@ I created the DAT version of my website using the <a href='https://github.com/da
 
 #### 4. Synching Changes to DAT
 
-Synching changes to the DAT version is just a matter of copying the freshly built site and running `dat sync` using the `dat` command line tool:
+Synching changes to the DAT version is just a matter of copying the freshly built site (while keeping track of changes<sup>1</sup>) and running dat sync using the dat command line tool:
 
 ```
-cp -r target/deploy/ path/to/dat
+rsync -r --size-only target/deploy/* ignore/dat/
 dat sync --dir=path/to/dat
 ```
 
 That's basically it. For simplicity I add all the commands to a `deploy.sh` shell script so I can simply run `bash deploy.sh` to deploy changes to both the http(s) and DAT versions of my website in one go.
 
 Now you can visit <a href='//ricky.codes'>ricky.codes</a> with a browser that supports the DAT protocol (like <a href='https://beakerbrowser.com/'>Beaker</a>).
+
+<sup>1</sup>Changed from `cp -r ...` to `rsync --size-only` ... so we don’t needlessly replace files and create new revisions… (I actually blew through my hashbase.io allotment doing this). Perhaps managing all this in a different git repo would make more sense?
 
 #### Further Reading
 
